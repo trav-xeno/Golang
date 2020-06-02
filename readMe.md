@@ -1,5 +1,6 @@
 # Go Lang
 I have used the Go language in the past, but wanted to revisit it with the changes made since I learned a few years ago. So This is a repo that will contain many go lang based projects spanning from Web to commandline projects. 
+The tour binary is an app to learn go writen by the go community.
 
 ## Go commands
 Helpful commands to remember:
