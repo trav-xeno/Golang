@@ -24,15 +24,15 @@ The puzzle has two rules:
 The Alexander Bogomolyn’s algorithm is used to permute first N natural numbers.
 Given the value of N we have to output all the permutations of numbers from 1 to N.
 
-Examples:
-Input : 2
-Output : 1 2
-         2 1
-
-Input : 3
-Output : 1 2 3
-         1 3 2
-         2 1 3
-         3 1 2
-         2 3 1
-         3 2 1
+Examples: <br />
+Input : 2 <br />
+Output : 1 2 <br />
+         2 1 <br />
+<br />
+Input : 3  <br />
+Output : 1 2 3 <br /> 
+         1 3 2 <br />
+         2 1 3 <br />
+         3 1 2 <br />
+         2 3 1 <br />
+         3 2 1 <br />
