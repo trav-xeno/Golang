@@ -1,6 +1,11 @@
-# Go commands 
+# Go Lang
+I have used the Go language in the past, but wanted to revisit it with the changes made since I learned a few years ago. So This is a repo that will contain many go lang based projects spanning from Web to commandline projects. 
+
+## Go commands
+Helpful commands to remember:
+
 * cd go fmt  formats in current dir  
-* cd go fmt ./...  format all current and all udner 
+* cd go fmt ./...  format all current and all folders code udner 
 * go get    updates and gets modules  
 * go install  create executables binary in go bin folder if successful 
 * go build    for executables mainly for testing it makes the result in the folder 
