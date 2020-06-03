@@ -8,13 +8,12 @@ func main() {
 	factorial(4, 1)
 	fmt.Println("next the Fibonacci sequence print the 6 in the sequence ")
 	fib(6, 0, 1)
-	fmt.Println("Next to run is Tower of Hanoi ")
-	hannoi(5)
+	fmt.Println("Next to run is Tower of Hanoi! The number of discs in the puzzle is: 4")
+	hannoi(4, "A", "B", "C")
 	fmt.Println("last but not least Alexander Bogomolny’s UnOrdered Permutation Algorithm ")
 	permutate(5)
 	fmt.Println("all done for now next your input!")
 	//call input fucntions
-
 }
 
 //factorial
@@ -49,8 +48,17 @@ func fib(n, a, b int) {
 
 //Tower of Hanoi
 //print out each move for n numbers
-func hannoi(num int) {
-	fmt.Println(num)
+// f from  , h helper , t target
+func move(f string, t string) {
+	fmt.Printf("move disc from %q to %q \n", f, t)
+}
+func hannoi(n int, f string, h string, t string) {
+	if n == 0 {
+	} else {
+		hannoi(n-1, f, t, h)
+		move(f, t)
+		hannoi(n-1, h, f, t)
+	}
 }
 
 //Alexander Bogomolny’s UnOrdered Permutation Algorithm

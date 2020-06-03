@@ -19,7 +19,7 @@ Each number is the sum of the previous two.
 
 ## Classic Tower of Hanoi 
 
-Tower of Hanoi is a mathematical puzzle. Traditionally, It consists of three poles and a number of disks of different sizes which can slide onto any poles. The puzzle starts with the disk in a neat stack in ascending order of size in one pole, the smallest at the top thus making a conical shape. The objective of the puzzle is to move all the disks from one pole to another pole with the help of third pole.
+Tower of Hanoi is a mathematical puzzle. Traditionally, It consists of three poles and a number of disks of different sizes which can slide onto any pole. The puzzle starts with the disk in a neat stack in ascending order of size in one pole, the smallest at the top thus making a conical shape. The objective of the puzzle is to move all the disks from one pole to another pole with the help of third pole.  This function will print out how to solve the puzzle for given n number of disks. Each pole will be represented as a letter starting pole is A , helper pole is B , and the target pole is C. 
 The puzzle has two rules:
 
 1. You can’t place a larger disk onto smaller disk
