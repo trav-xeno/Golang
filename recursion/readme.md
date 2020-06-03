@@ -1,13 +1,19 @@
 # Recusion practice
 This will display some tali recursion examples such as: 
+* factorial
 * fibonacci sequence
 * classic Tower of Hanoi 
 * Alexander Bogomolny’s UnOrdered Permutation Algorithm
 The app will run once on each problem and then will take user input for each classic problem.
 
+## Factorial 
+ n( n- 1) 
+5! = 5 * 4 * 3 * 2 * 1  = 120
+
+
 ## Fibonacci sequence
 
-example: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 and so on.  
+example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 and so on.  
 Each number is the sum of the previous two. 
 
 
