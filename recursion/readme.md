@@ -25,7 +25,7 @@ The puzzle has two rules:
 1. You can’t place a larger disk onto smaller disk
 2. Only one disk can be moved at a time
 
-## Alexander Bogomolny’s UnOrdered Permutation Algorithm
+## Alexander Bogomolny’s UnOrdered Permutation Algorithm  Coming soon
 
 The Alexander Bogomolyn’s algorithm is used to permute first N natural numbers.
 Given the value of N we have to output all the permutations of numbers from 1 to N.
@@ -35,7 +35,7 @@ Input : 2 <br />
 Output : 1 2 <br />
          2 1 <br />
 <br />
-Input : 3  <br />
+Input : 3  <br /> 
 Output : 1 2 3 <br /> 
          1 3 2 <br />
          2 1 3 <br />

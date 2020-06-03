@@ -10,9 +10,10 @@ func main() {
 	fib(6, 0, 1)
 	fmt.Println("Next to run is Tower of Hanoi! The number of discs in the puzzle is: 4")
 	hannoi(4, "A", "B", "C")
-	fmt.Println("last but not least Alexander Bogomolny’s UnOrdered Permutation Algorithm ")
-	permutate(5)
-	fmt.Println("all done for now next your input!")
+	//fmt.Println("last but not least Alexander Bogomolny’s UnOrdered Permutation Algorithm ")
+	///n := 5
+	//abp(arr, n, 0, -1)
+	fmt.Println("all done!")
 	//call input fucntions
 }
 
@@ -49,9 +50,11 @@ func fib(n, a, b int) {
 //Tower of Hanoi
 //print out each move for n numbers
 // f from  , h helper , t target
+// movei s a pure function that just prints the move to be made
 func move(f string, t string) {
 	fmt.Printf("move disc from %q to %q \n", f, t)
 }
+
 func hannoi(n int, f string, h string, t string) {
 	if n == 0 {
 	} else {
@@ -62,7 +65,39 @@ func hannoi(n int, f string, h string, t string) {
 }
 
 //Alexander Bogomolny’s UnOrdered Permutation Algorithm
-// show all possible from 1 to n ex: input 2 output 1 2 2 1
-func permutate(num int) {
-	fmt.Println(num)
+// show all possible from 1 to n ex: input 2 output 1 2   2 1
+func print(perm []int, num int) {
+	fmt.Println(perm)
+}
+
+// n number l level
+
+func abp(perm []int, n, k, lvl int) {
+
+	lvl = lvl + 1
+	perm[k] = lvl
+	fmt.Println("lvl: ", lvl)
+	fmt.Println(perm[k])
+	if lvl == n {
+		print(perm, n)
+
+		fmt.Println("done")
+	} else {
+		abp(perm, n, k, lvl)
+	}
+
+	/*
+		if lvl == n {
+			print(perm, n)
+		} else {
+			for i := 0; i < n; i++ {
+
+				if perm[i] == 0 {
+					abp(perm, n, i, lvl)
+				}
+
+			}
+
+		}*/
+
 }
