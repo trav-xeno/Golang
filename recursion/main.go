@@ -39,7 +39,7 @@ func fib(n, a, b int) {
 		fmt.Println(b)
 		fmt.Println("The number is: ", b)
 	} else {
-		fmt.Println(a)
+		fmt.Printf("%v, ", a)
 		n := n - 1
 		next := a + b
 		cur := b
@@ -50,13 +50,14 @@ func fib(n, a, b int) {
 //Tower of Hanoi
 //print out each move for n numbers
 // f from  , h helper , t target
-// movei s a pure function that just prints the move to be made
+// move is a pure function that just prints the move to be made
 func move(f string, t string) {
 	fmt.Printf("move disc from %q to %q \n", f, t)
 }
 
-func hannoi(n int, f string, h string, t string) {
+func hannoi(n int, f, h, t string) {
 	if n == 0 {
+		//do nothing there may be a better way to wrtie this part but it works this way sooooooo idk
 	} else {
 		hannoi(n-1, f, t, h)
 		move(f, t)
