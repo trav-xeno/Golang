@@ -12,12 +12,14 @@ func main() {
 	fmt.Println("current time is ", time.Now())
 	printRandom()
 	randomMain()
-
-	fmt.Println("call hello funciont")
+	fmt.Println("closure in go i.e. nest functions")
+	f := testing() //referance the funciton returned
+	fmt.Println(f(), f())
+	fmt.Println("call hello function")
 	str := hello()
 	fmt.Println(str)
-	fmt.Println("call foobar")
-	foobar(16)
+	fmt.Println("call fizzbuzz")
+	fizzbuzz(16)
 }
 
 // Returns an int >= min, < max
@@ -47,27 +49,34 @@ func randomString(len int) string {
 	return string(bytes)
 }
 
-// foobar divided by 3 foo and divided by 5 bar both foobar else print number
-func foobar(n int) {
-	fmt.Println("print if divided by 3 foo  divided by 5 bar both foobar \n otherwise print the nubmer")
+// fizzbuzz divided by 3 fizz and divided by 5 buzz both foobar else print number
+func fizzbuzz(n int) {
+	fmt.Println("print if divided by 3 fizz  divided by 5 buzz both foobar \n otherwise print the nubmer")
 	for i := 1; i < n; i++ {
 		if i%3 == 0 && i%5 == 0 {
-			fmt.Println("foobar")
+			fmt.Println("fizz buzz")
+		} else if i%3 == 0 {
+			fmt.Println("fizz")
+		} else if i%5 == 0 {
+			fmt.Println("buzz")
 		} else {
-			if i%3 == 0 {
-				fmt.Println("foo")
-			} else if i%5 == 0 {
-				fmt.Println("bar")
-			} else {
-				fmt.Println(i)
-			}
+			fmt.Println(i)
 		}
+
 	}
 
+}
+func testing() func() int {
+	a, b := 2, 2
+	return func() int {
+		x := a + b
+		a, b = a+a+a, b+a+b
+		fmt.Printf("values of a:%v and b:%v \n", a, b)
+		return x
+	}
 }
 
 //hello returns a string simple print
 func hello() string {
-	return "this is a returned string from a func"
-
+	return "Hello there! I hope the day is going great!"
 }
