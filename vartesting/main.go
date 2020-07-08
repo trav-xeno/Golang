@@ -20,6 +20,8 @@ func main() {
 	fmt.Println(str)
 	fmt.Println("call fizzbuzz")
 	fizzbuzz(16)
+	fmt.Println("looping with slices now running")
+	loopSlices()
 }
 
 // Returns an int >= min, < max
@@ -79,4 +81,51 @@ func testing() func() int {
 //hello returns a string simple print
 func hello() string {
 	return "Hello there! I hope the day is going great!"
+}
+
+func loopSlices() {
+
+	// Same type
+	data := []string{"apple", "orange", "grapes", "strawberry"}
+	fmt.Printf("data = %v (type %T)\n", data, data)
+
+	// Length
+	fmt.Println(len(data)) // 3
+
+	fmt.Println("--print indexing--")
+	// 0 indexing
+	fmt.Println(data[1]) // daffy
+
+	fmt.Println("--print a slice from index one to end--")
+	// slices
+	fmt.Println(data[1:]) // [daffy taz]
+
+	fmt.Println("--loop and print values in slice--")
+	// for
+	for i := 0; i < len(data); i++ {
+		fmt.Println(data[i])
+	}
+
+	fmt.Println("--loop and print only index--")
+	// Single value range
+	for i := range data {
+		fmt.Println(i)
+	}
+
+	fmt.Println("--or more handy print index and values--")
+	// Double value range
+	for i, name := range data {
+		fmt.Printf("%s at %d\n", name, i)
+	}
+
+	fmt.Println("--print only values using still range i.e using _ to not use the index--")
+	// Double value range, ignore index by using _
+	for _, name := range data {
+		fmt.Println(name)
+	}
+
+	fmt.Println("--append data to slice--")
+	// append
+	data = append(data, "bananas")
+	fmt.Println(data) // [bugs daffy taz elmer]
 }
