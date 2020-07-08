@@ -6,7 +6,7 @@ func main() {
 	//call func fib, hunio, permutate
 	fmt.Println("Hello! \n First function is factorial")
 	factorial(4, 1)
-	fmt.Println("next the Fibonacci sequence print the 6 in the sequence ")
+	fmt.Println("next the Fibonacci sequence print the 15th in the sequence ")
 	fib(15, 0, 1)
 	fmt.Println("Next to run is Tower of Hanoi! The number of discs in the puzzle is: 4")
 	hannoi(4, "A", "B", "C")
