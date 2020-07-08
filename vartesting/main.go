@@ -215,5 +215,5 @@ func wordCount() {
 	for _, word := range words {
 		counts[strings.ToLower(word)]++
 	}
-	fmt.Println(counts)
+	fmt.Println("result: ", counts)
 }
