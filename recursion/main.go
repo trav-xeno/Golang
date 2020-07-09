@@ -14,8 +14,7 @@ func main() {
 	n := 6
 	arr := []int{}
 	abp(arr, n, 0, -1)
-	fmt.Println("all done!")
-	//call input fucntions
+	fmt.Println("all done! Thanks for checking out my GO recursion!")
 }
 
 //factorial
