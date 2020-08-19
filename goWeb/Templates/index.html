@@ -12,17 +12,19 @@
     
 </head>
 <body>
-{{ $user := . }}
+
     <main  class="container">
-        <h2 class="col s12"> Hello, {{$user.Name}}</h2>
+        <h2 class="col s12 "> Hello, testing</h2>
         <h3 class="col s12">Your input printed </h3>
         <div class="carousel">
             <div class="carousel-item" >
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
-                      <span class="card-title">{{$user.Name}}</span>
-                      <p>Favorite Food: {{$user.FavFood}} <br /> 
-                        Fun Fact: {{$user.FunFact}}
+                      <span class="card-title">testing</span>
+                      <p>Favorite Food: really good food
+                         <br /> 
+                        Fun Fact: last test tonight
+
                     </p>
                     </div>
                   </div>
@@ -31,7 +33,7 @@
     </main>
     <script>
         window.onload = (event) => {
-            M.autoInit();
+            M.AutoInit();
          };
      </script>
 </body>
