@@ -3,7 +3,8 @@ This folder shows me using Golang template features to read and write data to fi
 ### libraries  Used:
 * text/template
 * log
-* html/template
+* fmt
+* text/template
 * os
 
 ## Things I always forget
