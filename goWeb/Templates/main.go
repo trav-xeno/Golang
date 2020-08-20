@@ -59,9 +59,8 @@ func main() {
 	blob := person{Name: "The Blob", FavFood: "raspberry", FunFact: "I play trumpet and swing dance!"}
 	//make a list of people to add to the carousel on the html page
 	people := []person{user, aiOne, mathis, blob}
-	fmt.Println(people)
 	//fmt.Println("name: " + user.Name + "\n favorite food: " + user.FavFood + "\n fun fact: " + user.FunFact)
-	err = tpl.Execute(os.Stdout, user)
+	err = tpl.Execute(os.Stdout, people)
 	if err != nil {
 		log.Println("error occured", err)
 	}
@@ -69,7 +68,7 @@ func main() {
 	if err != nil {
 		log.Println("create file error: ", err)
 	}
-	err = tpl.Execute(f, user)
+	err = tpl.Execute(f, people)
 	if err != nil {
 		log.Println("execute error: ", err)
 		return
