@@ -4,7 +4,7 @@ This folder shows me using Golang template features to read and write data to fi
 * text/template
 * log
 * fmt
-* text/template
+* html/template
 * os
 
 ## Things I always forget
