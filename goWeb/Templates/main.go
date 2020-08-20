@@ -54,6 +54,12 @@ func main() {
 	*/
 	//create user object based on input
 	user := person{Name: name, FavFood: food, FunFact: fact}
+	aiOne := person{Name: "aiOne", FavFood: "good bytes ;)", FunFact: "I wont take over the world"}
+	mathis := person{Name: "Mathis the dog", FavFood: "Turkey", FunFact: "I guide the blind."}
+	blob := person{Name: "The Blob", FavFood: "raspberry", FunFact: "I play trumpet and swing dance!"}
+	//make a list of people to add to the carousel on the html page
+	people := []person{user, aiOne, mathis, blob}
+	fmt.Println(people)
 	//fmt.Println("name: " + user.Name + "\n favorite food: " + user.FavFood + "\n fun fact: " + user.FunFact)
 	err = tpl.Execute(os.Stdout, user)
 	if err != nil {
