@@ -31,21 +31,15 @@ func main() {
 	foodReader := bufio.NewReader(os.Stdin) //create new reader
 	food, readErr := foodReader.ReadString('\n')
 	if readErr != nil {
-		log.Fatalln(readErr)
-		fmt.Println("an error occured while read input!")
+		log.Println("error getting food data: ", readErr)
 	}
 	fmt.Println("Please enter a fun fact: ")
 	funFactReader := bufio.NewReader(os.Stdin) //create new reader
 	fact, factErr := funFactReader.ReadString('\n')
 	if factErr != nil {
-		log.Fatalln(factErr)
-		fmt.Println("an error occured while read input!")
+		log.Println("error getting fun fact data: ", factErr)
 	}
 
-	if err != nil {
-		log.Fatalln(err)
-		fmt.Println("an error occured while read input!")
-	}
 	//this part reads template and prints to commandline and takes in data to add to webpage
 	// or
 	//if multiple templates use ExecuteTemplate
@@ -63,16 +57,15 @@ func main() {
 	//fmt.Println("name: " + user.Name + "\n favorite food: " + user.FavFood + "\n fun fact: " + user.FunFact)
 	err = tpl.Execute(os.Stdout, user)
 	if err != nil {
-		log.Fatalln(err)
-		fmt.Println("There was an err excecuting the template.")
+		log.Println("error occured", err)
 	}
 	f, err := os.Create("./index.html")
 	if err != nil {
-		log.Println("create file: ", err)
+		log.Println("create file error: ", err)
 	}
 	err = tpl.Execute(f, user)
 	if err != nil {
-		log.Print("execute: ", err)
+		log.Println("execute error: ", err)
 		return
 	}
 	f.Close()
