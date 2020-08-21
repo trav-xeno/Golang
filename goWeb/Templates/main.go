@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"text/template"
 )
 
@@ -19,9 +20,14 @@ type person struct {
 	FunFact string
 }
 
+//create function template to pass to template!
+var funcTemplate = template.FuncMap{
+	"upper": strings.ToUpper,
+}
+
 func main() {
-	//tpl is template pointer with returned read files data
-	tpl, err := template.ParseFiles("index.gohtml")
+	//tpl is template pointer with returned read files data  must handles ecpetions I guess
+	tpl, err := template.New("index.gohtml").Funcs(funcTemplate).ParseFiles("index.gohtml")
 	var name, food, fact string
 	//print questions to user
 	fmt.Println("Please enter your first name: ")
@@ -29,13 +35,13 @@ func main() {
 	fmt.Println("Please enter your favorite food: ")
 	// take multiple words input
 	foodReader := bufio.NewReader(os.Stdin) //create new reader
-	&food, readErr := foodReader.ReadString('\n')
+	food, readErr := foodReader.ReadString('\n')
 	if readErr != nil {
 		log.Println("error getting food data: ", readErr)
 	}
 	fmt.Println("Please enter a fun fact: ")
 	funFactReader := bufio.NewReader(os.Stdin) //create new reader
-	&fact, factErr := funFactReader.ReadString('\n')
+	fact, factErr := funFactReader.ReadString('\n')
 	if factErr != nil {
 		log.Println("error getting fun fact data: ", factErr)
 	}
@@ -62,15 +68,17 @@ func main() {
 	//fmt.Println("name: " + user.Name + "\n favorite food: " + user.FavFood + "\n fun fact: " + user.FunFact)
 	err = tpl.Execute(os.Stdout, people)
 	if err != nil {
-		log.Println("error occured", err)
+		log.Println("error occured while printing to stdout", err)
+		return
 	}
 	f, err := os.Create("./index.html")
 	if err != nil {
 		log.Println("create file error: ", err)
+		return
 	}
 	err = tpl.Execute(f, people)
 	if err != nil {
-		log.Println("execute error: ", err)
+		log.Println("tpl execute error: ", err)
 		return
 	}
 	f.Close()
