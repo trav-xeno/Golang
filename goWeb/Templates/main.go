@@ -29,13 +29,13 @@ func main() {
 	fmt.Println("Please enter your favorite food: ")
 	// take multiple words input
 	foodReader := bufio.NewReader(os.Stdin) //create new reader
-	food, readErr := foodReader.ReadString('\n')
+	&food, readErr := foodReader.ReadString('\n')
 	if readErr != nil {
 		log.Println("error getting food data: ", readErr)
 	}
 	fmt.Println("Please enter a fun fact: ")
 	funFactReader := bufio.NewReader(os.Stdin) //create new reader
-	fact, factErr := funFactReader.ReadString('\n')
+	&fact, factErr := funFactReader.ReadString('\n')
 	if factErr != nil {
 		log.Println("error getting fun fact data: ", factErr)
 	}
