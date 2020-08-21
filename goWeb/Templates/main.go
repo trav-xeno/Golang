@@ -28,7 +28,7 @@ var funcTemplate = template.FuncMap{
 
 /*
 After some research I out I could also write the code like this
-template.Must(template.New("").Funcs(fm).ParseFiles("index.gohtml")
+tpl := template.Must(template.New("").Funcs(fm).ParseFiles("index.gohtml")
                           ^^ this part messes me up all the time
 err := tpl.ExecuteTemplate(os.Stdout, "index.gohtml", data)
 
