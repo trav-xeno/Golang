@@ -20,13 +20,22 @@ type person struct {
 	FunFact string
 }
 
-//create function template to pass to template!
+//create function map to pass to the template!
+//this function will get called whenever the template is created so any data with upper in front of it will now be upper case
 var funcTemplate = template.FuncMap{
 	"upper": strings.ToUpper,
 }
 
+/*
+After some research I out I could also write the code like this
+template.Must(template.New("").Funcs(fm).ParseFiles("index.gohtml")
+                          ^^ this part messes me up all the time
+err := tpl.ExecuteTemplate(os.Stdout, "index.gohtml", data)
+
+*/
+
 func main() {
-	//tpl is template pointer with returned read files data  must handles ecpetions I guess
+	//tpl is template pointer with returned read files data and adds function ToUpper to the template
 	tpl, err := template.New("index.gohtml").Funcs(funcTemplate).ParseFiles("index.gohtml")
 	var name, food, fact string
 	//print questions to user
