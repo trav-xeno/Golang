@@ -27,11 +27,10 @@ var funcTemplate = template.FuncMap{
 }
 
 /*
-After some research I out I could also write the code like this
+After some research I found out I could also write the code like this
 tpl := template.Must(template.New("").Funcs(fm).ParseFiles("index.gohtml")
                           ^^ this part messes me up all the time
 err := tpl.ExecuteTemplate(os.Stdout, "index.gohtml", data)
-
 */
 
 func main() {
@@ -40,7 +39,7 @@ func main() {
 	var name, food, fact string
 	//print questions to user
 	fmt.Println("Please enter your first name: ")
-	fmt.Scan(&name) //single word input only but I hsould add a check to make sure they only enter one word
+	fmt.Scan(&name) //single word input only but I should add a check to make sure they only enter one word
 	fmt.Println("Please enter your favorite food: ")
 	// take multiple words input
 	foodReader := bufio.NewReader(os.Stdin) //create new reader
