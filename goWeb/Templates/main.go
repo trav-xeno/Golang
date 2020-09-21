@@ -89,6 +89,6 @@ func main() {
 		log.Println("tpl execute error: ", err)
 		return
 	}
-	f.Close()
+	defer f.Close()
 
 }
